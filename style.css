@@ -115,6 +115,30 @@ section h2 {
     color: #e0e0e0;
 }
 
+/* Style dla linków pod playlistami */
+.all-videos {
+    text-align: center; /* Wyśrodkowuje linki w poziomie */
+    width: 100%;        /* Zajmuje pełną szerokość */
+    margin-top: 20px;   /* Odstęp od góry */
+}
+
+.all-videos a {
+    display: inline-block;
+    margin: 0 160px;     /* Odstęp między linkami (zamiast gap) */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 3px;
+}
+
+.all-videos a:hover {
+    color: #8a8989;
+    border-bottom: 2px solid transparent;
+}
+
 /* Dostosowanie do urządzeń mobilnych */
 @media (max-width: 768px) {
     .playlist-grid {
@@ -130,6 +154,10 @@ section h2 {
     }
 
     .contact-links {
+        gap: 15px;
+    }
+
+    .all-videos {
         gap: 15px;
     }
 }
