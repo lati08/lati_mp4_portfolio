@@ -1,11 +1,9 @@
-/* Reset podstawowych stylów */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Konfiguracja tła oraz czcionki Open Sans */
 body {
     font-family: 'Open Sans', sans-serif;
     background: url('background.jpg') no-repeat center center fixed;
@@ -15,7 +13,6 @@ body {
     padding: 40px 20px;
 }
 
-/* Główny kontener strony z półprzezroczystym tłem dla czytelności */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -25,7 +22,6 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
-/* Nagłówek strony */
 header {
     text-align: center;
     margin-bottom: 40px;
@@ -45,28 +41,16 @@ header p {
     margin-bottom: 20px;
 }
 
-/* Style dla linków kontaktowych w nagłówku */
-.contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    margin-top: 15px;
-}
-
-.contact-links a {
+header h1 a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-    border-bottom: 2px solid transparent;
-    padding-bottom: 3px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: inline-block;
 }
 
-.contact-links a:hover {
-    color: #8a8989;
-    border-bottom: 2px solid #ffffff00;
+header h1 a:hover {
+    opacity: 0.7;
+    transform: scale(1.03);
 }
 
 /* Styl sekcji */
@@ -82,7 +66,6 @@ section h2 {
     padding-bottom: 8px;
 }
 
-/* Responsywny kontener wideo (proporcje 16:9) */
 .video-wrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
@@ -101,8 +84,8 @@ section h2 {
     height: 100%;
 }
 
-/* Siatka dla dwóch playlist na dole */
 .playlist-grid {
+    padding-top: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
@@ -115,28 +98,40 @@ section h2 {
     color: #e0e0e0;
 }
 
-/* Style dla linków pod playlistami */
+.contact-links,
 .all-videos {
-    text-align: center; /* Wyśrodkowuje linki w poziomie */
-    width: 100%;        /* Zajmuje pełną szerokość */
-    margin-top: 20px;   /* Odstęp od góry */
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
+.contact-links a,
 .all-videos a {
-    display: inline-block;
-    margin: 0 160px;     /* Odstęp między linkami (zamiast gap) */
-    color: #ffffff;
+    display: flex;
+    align-items: center;
     text-decoration: none;
+    color: #ffffff;
     font-size: 2rem;
     font-weight: 600;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-    border-bottom: 2px solid transparent;
-    padding-bottom: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+    margin-bottom: 10px;
 }
 
+.contact-links a img {
+    width: 32px;
+    height: 32px;
+    filter: invert(1); 
+}
+
+.contact-links a:hover,
 .all-videos a:hover {
-    color: #8a8989;
-    border-bottom: 2px solid transparent;
+    transform: scale(1.1);
+    opacity: 0.7;
 }
 
 /* Dostosowanie do urządzeń mobilnych */
@@ -153,10 +148,7 @@ section h2 {
         padding: 20px;
     }
 
-    .contact-links {
-        gap: 15px;
-    }
-
+    .contact-links,
     .all-videos {
         gap: 15px;
     }
